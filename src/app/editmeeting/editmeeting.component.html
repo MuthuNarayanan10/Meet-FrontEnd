@@ -1,0 +1,57 @@
+<div id="page-wrapper">
+    <div id="page-inner">
+      <div class="row">
+      
+        <div class="col-md-12">
+        <h1 class="page-head-line">Edit Meeting</h1>
+        <h1 class="page-subhead-line">admin can edit meeting here!  </h1>
+  
+        </div>
+    </div>
+      <div class="row">
+          <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <form [formGroup]="editForm" (ngSubmit)="postdata(editForm)" autocomplete="off" >
+
+                    <div class="form-group">
+                        <label for="name">Users</label>
+
+                    <div *ngFor="let user of users; let i=index">
+                        <label>
+                          <input type="checkbox" [checked]="user.checked == 'Y'" [value]="user.email" (change)="onCheckboxChange($event)" />
+                          {{user.firstname}}
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label> <br>
+                    <!-- <ejs-calendar name="meetingdate" formControlName="meetingdate" [value]='dateValue' ></ejs-calendar>
+                     -->
+                     <input type="date" name="meetingdate" formControlName="meetingdate" [(ngModel)]="dateValue" >
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <br>
+                        <input type="time" name="meetingtime" formControlName="meetingtime" [(ngModel)]="time" >
+                    </div>
+                    <div class="form-group">
+                        <label for="venue">Venue</label>
+                        <!-- <textArea name="desc" [(ngModel)]='desc' class="form-control input-sm" rows="5" cols="60" ></textArea> -->
+                        <input type="text" name="venue" formControlName="venue" autocomplete="off" class="form-control input-sm" placeholder="description">
+            
+                        </div>
+                        <div class="form-group">
+                            <label for="purpose">Purpose</label>
+                            <!-- <textArea name="desc" [(ngModel)]='desc' class="form-control input-sm" rows="5" cols="60" ></textArea> -->
+                            <input type="text" name="purpose" formControlName="purpose" autocomplete="off" class="form-control input-sm" placeholder="description">
+                
+                            </div>
+
+                            
+
+                            <button type="submit" class="btn btn-primary" >Update Meeting</button>
+                </form>
+            </div>
+           </div>
+       </div>

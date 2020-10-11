@@ -1,0 +1,44 @@
+<!-- <h2 class="text-center">Registration</h2> -->
+<div class="row">
+<div class="col-md-3">
+</div>
+<!-- <div class="col-md-6 col-md-offset-3"> -->
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+        <div class="card-body">
+            <h5 class="card-title text-center">User Registration Form!</h5>
+        <form [formGroup]="angForm" (ngSubmit)="postdata(angForm)" autocomplete="off" >
+        <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text"  formControlName="firstname" autocomplete="off" class="form-control input-sm" placeholder="First Name">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" formControlName="lastname" autocomplete="off" class="form-control input-sm" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" name="password" formControlName="password" autocomplete="off" class="form-control input-sm" placeholder="Password">
+        </div>
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" formControlName="email" autocomplete="off" class="form-control input-sm" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Mobile Number</label>
+            <input type="text" name="mobileno" formControlName="mobileno" autocomplete="off" class="form-control input-sm" placeholder="Mobile Number">
+            </div>
+        <button type="submit" class="btn btn-success" >Register</button>
+
+        &nbsp;&nbsp;
+
+        <button type="button"   class="btn btn-danger"  (click)="cancel()">Cancel</button>
+        </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+</div>
+</div>
+
